@@ -80,8 +80,8 @@ function draw() {
   if( adventureManager.getStateName() !== "Splash" && 
       adventureManager.getStateName() !== "Introduce" &&  
       adventureManager.getStateName() !== "Introduce2" &&  
-      adventureManager.getStateName() !== "Introduce3" &&  
-      adventureManager.getStateName() !== "AvatarSelection" ) {
+      adventureManager.getStateName() !== "Introduce3" ){ 
+      //adventureManager.getStateName() !== "AvatarSelection" ) {
       
     // responds to keydowns
     moveSprite();
@@ -187,64 +187,30 @@ function moveSprite() {
 // It is sublcassed from PNGRoom, which means all the loading, unloading and drawing of that
 // class can be used. We call super() to call the super class's function as needed
 class IntroduceScreen extends PNGRoom {
-  // Constructor gets calle with the new keyword, when upon constructor for the adventure manager in preload()
+  // Constructor gets called with the new keyword, when upon constructor for the adventure manager in preload()
   constructor() {
     super();    // call super-class constructor to initialize variables in PNGRoom
-
-    // this.textBoxWidth = (width/6)*4;
-    // this.textBoxHeight = (height/6)*4; 
-
-    // // hard-coded, but this could be loaded from a file if we wanted to be more elegant
-    // this.introduceText = "You are navigating through the interior space of your moods. There is no goal to this game, but just a chance to explore various things that might be going on in your head. Use the ARROW keys to navigate your avatar around.";
   }
 
   // call the PNGRoom superclass's draw function to draw the background image
   // and draw our instructions on top of this
-    draw() {
-      // tint down background image so text is more readable
-      // tint(128);
-      
+    draw() {  
       // this calls PNGRoom.draw()
       super.draw();
-      
-      // text draw settings
-      // fill(255);
-      // textAlign(CENTER);
-      // textSize(30);
-
-      // // Draw text in a box
-      // text(this.introduceText, width/6, height/6, this.textBoxWidth, this.textBoxHeight );
     }
 }
 
 class Introduce2Screen extends PNGRoom {
-  // Constructor gets calle with the new keyword, when upon constructor for the adventure manager in preload()
+  // Constructor gets called with the new keyword, when upon constructor for the adventure manager in preload()
   constructor() {
     super();    // call super-class constructor to initialize variables in PNGRoom
-
-    // this.textBoxWidth = (width/6)*4;
-    // this.textBoxHeight = (height/6)*4; 
-
-    // // hard-coded, but this could be loaded from a file if we wanted to be more elegant
-    // this.introduceText = "You are navigating through the interior space of your moods. There is no goal to this game, but just a chance to explore various things that might be going on in your head. Use the ARROW keys to navigate your avatar around.";
   }
 
   // call the PNGRoom superclass's draw function to draw the background image
   // and draw our instructions on top of this
     draw() {
-      // tint down background image so text is more readable
-      // tint(128);
-      
-      // this calls PNGRoom.draw()
       super.draw();
       
-      // text draw settings
-      // fill(255);
-      // textAlign(CENTER);
-      // textSize(30);
-
-      // // Draw text in a box
-      // text(this.introduceText, width/6, height/6, this.textBoxWidth, this.textBoxHeight );
     }
 }
 
@@ -253,58 +219,32 @@ class Introduce3Screen extends PNGRoom {
   constructor() {
     super();    // call super-class constructor to initialize variables in PNGRoom
 
-    // this.textBoxWidth = (width/6)*4;
-    // this.textBoxHeight = (height/6)*4; 
-
-    // // hard-coded, but this could be loaded from a file if we wanted to be more elegant
-    // this.introduceText = "You are navigating through the interior space of your moods. There is no goal to this game, but just a chance to explore various things that might be going on in your head. Use the ARROW keys to navigate your avatar around.";
+    
   }
 
   // call the PNGRoom superclass's draw function to draw the background image
   // and draw our instructions on top of this
     draw() {
-      // tint down background image so text is more readable
-      // tint(128);
-      
-      // this calls PNGRoom.draw()
+     
       super.draw();
       
-      // text draw settings
-      // fill(255);
-      // textAlign(CENTER);
-      // textSize(30);
-
-      // // Draw text in a box
-      // text(this.introduceText, width/6, height/6, this.textBoxWidth, this.textBoxHeight );
     }
 }
 
 // Subclass of PNGRoom, also uses global variables from this
 // sketch (unorthodox, but ok)
-class AvatarSelectionScreen extends PNGRoom {
+class PresentScreen extends PNGRoom {
   // Constructor gets calle with the new keyword, when upon constructor for the adventure manager in preload()
   constructor() {
     super();    // call super-class construtor
 
-    // change the displau text
-    // this.textBoxWidth = (width/6)*4;
-    // this.textBoxHeight = (height/6)*4; 
-
-    // this.introduceText = "Choose your avatar\nType [1] for Birdy\nType [2] for Bubbly\nType [3] for Rocks";
+    
   }
 
   draw() {
       // this calls PNGRoom.draw()
       super.draw();
       
-      // push();
-      // // text draw settings
-      // fill(240,120,0);
-      // textAlign(CENTER);
-      // textSize(30);
-
-      // // Draw text in a box
-      // text(this.introduceText, width/6, height/6, this.textBoxWidth, this.textBoxHeight );
     
       let xStart = 500;
       let xDist = 150;
@@ -312,12 +252,6 @@ class AvatarSelectionScreen extends PNGRoom {
       for( let i = 0; i < avatarAnimations.length; i++ ) {
         avatarAnimations[i].draw( xStart + (i*xDist), yPos);
       }
-
-      // draw little ellipse thing
-      // fill('#FF0000');
-      // ellipseMode(CENTER);
-      // circle(xStart+ (selectedAvatarAnimation*xDist), yPos + 65, 10 );
-      // pop();
     }
 
     drawSelectionTriangle() {
