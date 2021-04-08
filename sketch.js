@@ -38,7 +38,7 @@ function preload() {
   adventureManager = new AdventureManager('data/adventureStates.csv', 'data/interactionTable.csv');
 
   // load all our potential avatar animations here
-  avatarAnimations[0] = loadAnimation('assets/JeffBezos-1.png', 'assets/JeffBezos-4.png');
+  //avatarAnimations[0] = loadAnimation('assets/JeffBezos-1.png', 'assets/JeffBezos-4.png');
   // avatarAnimations[1] = loadAnimation('assets/avatars/bubbly0001.png', 'assets/avatars/bubbly0004.png');
   // avatarAnimations[2] = loadAnimation('assets/avatars/rocks0.png', 'assets/avatars/rocks3.png');
 }
@@ -53,6 +53,7 @@ function setup() {
   // create a sprite and add the 3 animations
   playerSprite = createSprite(width/2, height/2, 80, 80);
   
+  playerSprite.addAnimation('walk', loadAnimation('assets/JeffBezos-1.png','assets/JeffBezos-4.png'));
   // use this to track movement from toom to room in adventureManager.draw()
   adventureManager.setPlayerSprite(playerSprite);
 
@@ -241,6 +242,8 @@ class PresentScreen extends PNGRoom {
     
   }
 
+
+
   draw() {
       // this calls PNGRoom.draw()
       super.draw();
@@ -258,4 +261,3 @@ class PresentScreen extends PNGRoom {
       selectedAvatarAnimation
     }
 }
-
