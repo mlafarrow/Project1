@@ -143,42 +143,42 @@ function moveSprite() {
 
 //-------------- CLICKABLE CODE  ---------------//
 
-// function setupClickables() {
-//   // All clickables to have same effects
-//   for( let i = 0; i < clickables.length; i++ ) {
-//     clickables[i].onHover = clickableButtonHover;
-//     clickables[i].onOutside = clickableButtonOnOutside;
-//     clickables[i].onPress = clickableButtonPressed;
-//   }
-// }
+function setupClickables() {
+  // All clickables to have same effects
+  for( let i = 0; i < clickables.length; i++ ) {
+    clickables[i].onHover = clickableButtonHover;
+    clickables[i].onOutside = clickableButtonOnOutside;
+    clickables[i].onPress = clickableButtonPressed;
+  }
+}
 
-// // tint when mouse is over
-// clickableButtonHover = function () {
-//   this.color = "#AA33AA";
-//   this.noTint = false;
-//   this.tint = "#FF0000";
-// }
+// tint when mouse is over
+clickableButtonHover = function () {
+  this.color = "#AA33AA";
+  this.noTint = false;
+  this.tint = "#FF0000";
+}
 
-// // color a light gray if off
-// clickableButtonOnOutside = function () {
-//   // backto our gray color
-//   this.color = "#AAAAAA";
-// }
+// color a light gray if off
+clickableButtonOnOutside = function () {
+  // backto our gray color
+  this.color = "#AAAAAA";
+}
 
-// clickableButtonPressed = function() {
-//   // these clickables are ones that change your state
-//   // so they route to the adventure manager to do this
-//   if( this.id === playGameIndex || this.id === chooseAvatarIndex || this.id === doneIndex ) {
-//       adventureManager.clickablePressed(this.name);
-//   } 
+clickableButtonPressed = function() {
+  // these clickables are ones that change your state
+  // so they route to the adventure manager to do this
+  if( this.id === playGameIndex || this.id === chooseAvatarIndex || this.id === doneIndex ) {
+      adventureManager.clickablePressed(this.name);
+  } 
 
-//   // add animation to the player sprite once we start the game
-//   if( this.id === playGameIndex ) {
-//     playerSprite.addAnimation('regular', avatarAnimations[selectedAvatarAnimation]);
-//   }
+  // add animation to the player sprite once we start the game
+  if( this.id === playGameIndex ) {
+    playerSprite.addAnimation('regular', avatarAnimations[selectedAvatarAnimation]);
+  }
 
-//   // Other non-state changing ones would go here.
-// }
+  // Other non-state changing ones would go here.
+}
 
 
 
