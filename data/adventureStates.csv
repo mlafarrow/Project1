@@ -15,5 +15,5 @@ ID,StateName,ClassName,PNGFilename,CollisionFilename
 13,TryAgain2,PNGRoom,assets/tryagain2.jpg,data/tryagain2_cl.csv
 14,Air1,PNGRoom,Assets/air1.jpg,data/air1_cl.csv
 15,Air2,PNGRoom,Assets/air2.jpg,data/air2_cl.csv
-16,TryAgain3,PNGRoom,Assets/tryagain3.jpg,date/tryagain3_cl.csv
+16,TryAgain3,PNGRoom,Assets/tryagain3.jpg,data/tryagain3_cl.csv
 17,Yay,PNGRoom,Assets/yay.jpg,
