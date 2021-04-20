@@ -14,8 +14,9 @@ Air1,,,mouseReleased,,,Air2
 Air2,,,,,N,NextLevel2
 Air2,,,,,E,TryAgain2
 TryAgain2,,,,,W,Air2
-NextLevel2,,,,,E,Waste
-Waste1,,,,,N,TryAgain3
-Waste2,,,,,E,Yay
-TryAgain3,,,,,S,Waste
+NextLevel2,,,,,E,Workers1
+Workers1,,,mouseReleased,,,Workers2
+Workers2,,,,,S,Yay
+Workers2,,,,,N,TryAgain3
+TryAgain3,,,,,S,Workers2
 Yay,,,mouseReleased,,,Splash
