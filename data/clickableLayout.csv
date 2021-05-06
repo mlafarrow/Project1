@@ -1,4 +1,4 @@
 ID,Name,State,PNGFilename,Text,x,y,visible
-0,Frog,Waste,assets/avatars/frog.png,hi,100,650,yes
-1,Frog2,Ocean,assets/avatars/frog.png,hi,300,650,yes
-2,Frog3,Air,assets/avatars/frog.png,hi,100,650,yes
+0,toad1,Ocean1,assets/avatars/toad.png,,100,650,yes
+1,toad2,Air1,assets/avatars/toad.png,,100,650,yes
+2,toad3,Workers1,assets/avatars/toad.png,,100,650,yes

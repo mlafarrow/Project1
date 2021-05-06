@@ -8,7 +8,8 @@ Present2,,,,,E,Ocean1
 Ocean1,,,mouseReleased,,,Ocean2
 Ocean2,,,,,E,NextLevel1
 Ocean2,,,,,N,TryAgain1
-TryAgain1,,,,,S,Ocean2
+TryAgain1,,,mouseReleased,,,Ideal1
+Ideal1,,,,,S,Ocean2
 NextLevel1,,,,,E,Air1
 Air1,,,mouseReleased,,,Air2
 Air2,,,,,N,NextLevel2
