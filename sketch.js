@@ -32,8 +32,8 @@ var playerSprite;
 var playerAnimation;
 
 // Clickables: the manager class
-var clickablesManager;    // the manager class
-var clickables;           // an array of clickable objects
+// var clickablesManager;    // the manager class
+// var clickables;           // an array of clickable objects
 
 // indexes into the clickable array (constants)
 const toad1Index = 0;
@@ -47,13 +47,8 @@ var selectedAvatarAnimation = 0;  // default to zero
 
 // Allocate Adventure Manager with states table and interaction tables
 function preload() {
-  clickablesManager = new ClickableManager('data/clickableLayout.csv');
+  //clickablesManager = new ClickableManager('data/clickableLayout.csv');
   adventureManager = new AdventureManager('data/adventureStates.csv', 'data/interactionTable.csv');
-
-  // load all our potential avatar animations here
-  //avatarAnimations[0] = loadAnimation('assets/JeffBezos-1.png', 'assets/JeffBezos-4.png');
-  // avatarAnimations[1] = loadAnimation('assets/avatars/bubbly0001.png', 'assets/avatars/bubbly0004.png');
-  // avatarAnimations[2] = loadAnimation('assets/avatars/rocks0.png', 'assets/avatars/rocks3.png');
 }
 
 // Setup the adventure manager
@@ -61,7 +56,7 @@ function setup() {
   createCanvas(1280, 720);
 
   // setup the clickables = this will allocate the array
-  clickables = clickablesManager.setup();
+  //clickables = clickablesManager.setup();
 
   // create a sprite and add the 3 animations
   playerSprite = createSprite(width/2, height/2, 80, 80);
@@ -70,16 +65,9 @@ function setup() {
   // use this to track movement from toom to room in adventureManager.draw()
   adventureManager.setPlayerSprite(playerSprite);
 
-  // this is optional but will manage turning visibility of buttons on/off
-  // based on the state name in the clickableLayout
-  // adventureManager.setClickableManager(clickablesManager);
-
-    // This will load the images, go through state and interation tables, etc
   adventureManager.setup();
 
-  // call OUR function to setup additional information about the p5.clickables
-  // that are not in the array 
-  setupClickables(); 
+  //setupClickables(); 
 }
 
 // Adventure manager handles it all!
@@ -103,36 +91,8 @@ function draw() {
     // this is a function of p5.js, not of this sketch
     drawSprites();
   } 
-  clickablesManager.draw();
+  //clickablesManager.draw();
 }
-
-// pass to adventure manager, this do the draw / undraw events
-// function keyPressed() {
-//   // toggle fullscreen mode
-//   if( key === 'f') {
-//     fs = fullscreen();
-//     fullscreen(!fs);
-//     return;
-//   }
-
-//   // dispatch key events for adventure manager to move from state to 
-//   // state or do special actions - this can be disabled for NPC conversations
-//   // or text entry   
-
-//  // an example of when we are trapping events for certain screens
-//   if( adventureManager.getStateName() === "AvatarSelection" ) {
-//     if( key === '1' || key === '2' || key === '3') {
-//       // convert to array index, e.g. '2' --> 2 - 1 = [1]
-//       selectedAvatarAnimation = parseInt(key) - 1;
-//     }
-//   }
-
-//   else {
-//     // dispatch to elsewhere
-//     adventureManager.keyPressed(key); 
-//   }
-// }
-
 
 function mouseReleased() {
   adventureManager.mouseReleased();
@@ -157,36 +117,25 @@ function moveSprite() {
 
 //-------------- CLICKABLE CODE  ---------------//
 
-function setupClickables() {
-  // All clickables to have same effects
-  for( let i = 0; i < clickables.length; i++ ) {
-    //clickables[i].onHover = clickableButtonHover;
-   // clickables[i].onOutside = clickableButtonOnOutside;
-    clickables[i].onPress = clickableButtonPressed;
-  }
-}
 
-// tint when mouse is over
-// clickableButtonHover = function () {
-//   this.color = "#AA33AA";
-//   this.noTint = false;
-//   this.tint = "#FF0000";
+// function setupClickables() {
+//   // All clickables to have same effects
+//   for( let i = 0; i < clickables.length; i++ ) {
+//     //clickables[i].onHover = clickableButtonHover;
+//    // clickables[i].onOutside = clickableButtonOnOutside;
+//     clickables[i].onPress = clickableButtonPressed;
+//   }
 // }
 
-// color a light gray if off
-// clickableButtonOnOutside = function () {
-//   // backto our gray color
-//   this.color = "#AAAAAA";
-// }
 
-clickableButtonPressed = function() {
-  // these clickables are ones that change your state
-  // so they route to the adventure manager to do this
+// clickableButtonPressed = function() {
+//   // these clickables are ones that change your state
+//   // so they route to the adventure manager to do this
   
-      adventureManager.clickablePressed(this.name);
+//       adventureManager.clickablePressed(this.name);
 
 
-}
+// }
 
 
 
